@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container my-5">
+
+    <div class="card shadow-lg">
+
+        <div class="card-header bg-primary text-white text-center">
+
+            <h2>House Price Prediction</h2>
+            <p class="mb-0">Enter House Details</p>
+
+        </div>
+
+        <div class="card-body">
+
+            <form action="{{ url_for('result') }}" method="POST">
+
+                <div class="row">
+
+                    <!-- Area -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Area (sq ft)</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="area"
+                            min="100"
+                            max="100000"
+                            step="1"
+                            required>
+                    </div>
+
+                    <!-- Bedrooms -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Bedrooms</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="bedrooms"
+                            min="1"
+                            max="20"
+                            step="1"
+                            required>
+                    </div>
+
+                    <!-- Bathrooms -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Bathrooms</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="bathrooms"
+                            min="1"
+                            max="20"
+                            step="1"
+                            required>
+                    </div>
+
+                    <!-- Stories -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Stories</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="stories"
+                            min="1"
+                            max="10"
+                            step="1"
+                            required>
+                    </div>
+
+                    <!-- Main Road -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Main Road</label>
+
+                        <select class="form-select" name="main_road" required>
+
+                            <option value="">Select</option>
+
+                            <option value="yes">Yes</option>
+
+                            <option value="no">No</option>
+
+                        </select>
+                    </div>
+
+                    <!-- Guest Room -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Guest Room</label>
+
+                        <select class="form-select" name="guest_room" required>
+
+                            <option value="">Select</option>
+
+                            <option value="yes">Yes</option>
+
+                            <option value="no">No</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Basement -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Basement</label>
+
+                        <select class="form-select" name="basement" required>
+
+                            <option value="">Select</option>
+
+                            <option value="yes">Yes</option>
+
+                            <option value="no">No</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Hot Water Heating -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Hot Water Heating</label>
+
+                        <select class="form-select" name="hot_water_heating" required>
+
+                            <option value="">Select</option>
+
+                            <option value="yes">Yes</option>
+
+                            <option value="no">No</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Air Conditioning -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Air Conditioning</label>
+
+                        <select class="form-select" name="air_conditioning" required>
+
+                            <option value="">Select</option>
+
+                            <option value="yes">Yes</option>
+
+                            <option value="no">No</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Parking -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Parking Spaces</label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="parking"
+                            min="0"
+                            max="10"
+                            step="1"
+                            required>
+
+                    </div>
+
+                    <!-- Preferred Area -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Preferred Area</label>
+
+                        <select class="form-select" name="pref_area" required>
+
+                            <option value="">Select</option>
+
+                            <option value="yes">Yes</option>
+
+                            <option value="no">No</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Furnishing -->
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">Furnishing Status</label>
+
+                        <select class="form-select"
+                                name="furnishing_status"
+                                required>
+
+                            <option value="">Select</option>
+
+                            <option value="furnished">Furnished</option>
+
+                            <option value="semi-furnished">Semi-Furnished</option>
+
+                            <option value="unfurnished">Unfurnished</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-4">
+
+                    <button
+                        class="btn btn-primary btn-lg"
+                        type="submit">
+
+                        Predict House Price
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
